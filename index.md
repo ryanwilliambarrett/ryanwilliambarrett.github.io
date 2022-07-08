@@ -1,4 +1,6 @@
-## Welcome to GitHub Pages
+## Using Google Cloud Translate AI API from Jupyter Notebook
+
+Using the API for Translation AI from Google Cloud is very powerful and it can help people complete incredible complicated tasks quickly. Abby Carey at Google has created a wonderful [tutorial]([url](https://codelabs.developers.google.com/codelabs/cloud-translation-python3#0)) that can train you to use Translation AI from Google's web host using Cloud Shell and Python.
 
 You can use the [editor on GitHub](https://github.com/ryanwilliambarrett/ryanwilliambarrett.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
 

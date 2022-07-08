@@ -8,6 +8,30 @@ To begin, please initialize a Translation AI project using this [tutorial](https
 
 ## Downloading the credentials as a JSON file
 
+Once you have followed the necessary steps in the Google tutorial and created a Translation AI project you must then do the following:
+
+1. In the Google Cloud console, go to the [Service accounts page](https://console.cloud.google.com/iam-admin/serviceaccounts?walkthrough_id=iam--create-service-account-keys&_ga=2.44801696.523119782.1657215207-190287399.1657054577&_gac=1.92424559.1657282078.CjwKCAjwq5-WBhB7EiwAl-HEkt1rDGXmXFl6TVNspwwNWnJ4O9oOTIgRgPXb4bMjQ-mp8vbmSGw5QRoCeR0QAvD_BwE).
+2. Select the project that you initialized for Translate AI.
+3. On the Service accounts page, click the email address of the Translate AI account that you want to create a key for.
+4. Click the Keys tab.
+5. Click the Add key drop-down menu, then select Create new key.
+6. Select JSON as the Key type and click Create.
+Clicking Create downloads a service account key file. After you download the key file, you cannot download it again.
+
+## Running the Translate AI API locally using Jupyter Notebook
+
+You will need to install google.cloud because the Cloud Client Libraries are the recommended way to access Google Cloud APIs programmatically.
+
+```markdown
+pip install google.cloud
+```
+Next, you will need to set an environment variable so you can access the Google Cloud Translate API. This is done using your JSON file containing your credentials so set the path to the detailed location of this file.
+
+```markdown
+#set environment variable
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="C:\\Users\\xxx\\file.json"
+```
+
 
 
 You can use the [editor on GitHub](https://github.com/ryanwilliambarrett/ryanwilliambarrett.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.

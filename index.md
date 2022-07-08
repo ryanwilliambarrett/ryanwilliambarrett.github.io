@@ -29,10 +29,45 @@ Next, you will need to set an environment variable so you can access the Google 
 
 ```markdown
 #set environment variable
+from os import environ
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="C:\\Users\\xxx\\file.json"
 ```
+Now we are set up complete the same tasks that are demonstrated in Google's Cloud Service web client, but from our local Jupyter Notebook. The following code is a replication from the tutorial and it imports the translate function from the google.cloud library, then it lists the available translation languages in Translate AI. Make sure to enter your own Project ID in the first line of this code. This Project ID can be found in the Google Cloud Dashboard, associated with your relevant Translate AI project.
 
+```markdown
+project_id = "xxxxxxx-xxxxx-xxxxxx"
+assert project_id
+parent = f"projects/{project_id}"
+client = translate.TranslationServiceClient()
 
+response = client.get_supported_languages(parent=parent, display_language_code="en")
+languages = response.languages
+
+print(f" Languages: {len(languages)} ".center(60, "-"))
+for language in languages:
+    print(f"{language.language_code}\t{language.display_name}")
+```
+
+The following example can be run locally on your script and will offer an example about how to translate a phrase. Please study the code as it can be easily transformed with Pandas and loops to process vectorized operations that can translate a lot of data at once.
+
+```markdown
+project_id = "optimal-shard-355712"
+assert project_id
+parent = f"projects/{project_id}"
+client = translate.TranslationServiceClient()
+
+sample_text = "Hello world!"
+target_language_code = "hi"
+
+response = client.translate_text(
+    contents=[sample_text],
+    target_language_code=target_language_code,
+    parent=parent,
+)
+
+for translation in response.translations:
+    print(translation.translated_text)
+```
 
 You can use the [editor on GitHub](https://github.com/ryanwilliambarrett/ryanwilliambarrett.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
 

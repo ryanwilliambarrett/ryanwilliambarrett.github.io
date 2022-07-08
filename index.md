@@ -69,6 +69,6 @@ for translation in response.translations:
     print(translation.translated_text)
 ```
 
-##Conclusion
+## Conclusion
 
 Thank you for getting this far. If you follow this guide step-by-step you will be in good shape to translate data from one langauge to another using Python in Jupyter Notebook scripts that can easily be saved for personal use and shared. this process will help people in team settings progress together using single .ipynb scripts so long as the JSON file is shared.
